@@ -25,3 +25,8 @@ z = [1.5, 2.5, 3.5, 4.5, 5.5]
 
 
 char_lagrange(z, x)
+
+
+def lagrange(z, x, y):
+    
+    return[]
