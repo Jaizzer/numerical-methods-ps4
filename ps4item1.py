@@ -28,5 +28,7 @@ char_lagrange(z, x)
 
 
 def lagrange(z, x, y):
+    # Obtain the evaluated Lagrange chracteristic polynomial at points z = [z_0,...,z_m]
+    evaluated_characteristic_polynomial = char_lagrange(z, x)
     
     return[]
