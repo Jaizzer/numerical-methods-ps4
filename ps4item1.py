@@ -16,19 +16,6 @@ def char_lagrange(z, x):
             evaluated_characteristic_polynomial[k][i] = result
     return evaluated_characteristic_polynomial
 
-
-# Initialize x-interpolation values
-x = [1, 2, 3, 4, 5]
-
-# Initialize non-interpolation values
-z = [1.5, 2.5, 3.5, 4.5, 5.5]
-
-# Initialize y-interpolation values
-y = [12, 34, 56, 58, 90]
-
-char_lagrange(z, x)
-
-
 def lagrange(z, x, y):
     # Obtain the evaluated Lagrange chracteristic polynomial at points z = [z_0,...,z_m]
     evaluated_characteristic_polynomial = char_lagrange(z, x)
