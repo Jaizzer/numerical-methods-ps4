@@ -5,7 +5,15 @@ def char_lagrange(z, x):
     
     # Initialize matrix to store the evaluated values
     matrix = [[0 for _ in range(z_length)] for _ in range(x_length)]
-
+    
+    # Evaluate the Lagrange characteristic polynomial at x_k with z_i
+    for k in range(x_length):
+        for i in range(z_length):
+            result = 1
+            for m in range(x_length):
+                if m != k:
+                    result = result * (z[i] - x[m]) / (x[k] - x[m])
+            matrix[k][i] = result
     return matrix
 
 
