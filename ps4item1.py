@@ -1,3 +1,6 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
 def char_lagrange(z, x):
     # Determine the length of the inputs
     x_length = len(x)
@@ -42,3 +45,30 @@ def lagrange(z, x, y):
 # Given function to interpolate
 def given_function(x):
     return 1 / (x**4 - 3*x**2 + 4)
+
+
+# Initialize the plot
+plt.figure(num=0, dpi=120)
+
+# Plot the lagrange interpolation function (nodes = 5)
+x_lagrange_0= np.linspace(0, 3, num=5)
+y_lagrange_0 = given_function(x_lagrange_0)
+z_0 = np.linspace(0, 3,num=100)
+plt.plot(z_0, lagrange(z_0, x_lagrange_0, y_lagrange_0))
+
+# Plot the lagrange interpolation function (nodes = 9)
+x_lagrange_1 = np.linspace(0, 3, num=9)
+y_lagrange_1 = given_function(x_lagrange_1)
+z_1 = np.linspace(0, 3,num=100)
+plt.plot(z_1, lagrange(z_1, x_lagrange_1, y_lagrange_1))
+
+# Plot the lagrange interpolation function (nodes = 14)
+x_lagrange_2 = np.linspace(0, 3, num=14)
+y_lagrange_2 = given_function(x_lagrange_2)
+z_2 = np.linspace(0, 3,num=100)
+plt.plot(z_2, lagrange(z_2, x_lagrange_2, y_lagrange_2))
+
+# Plot the original function
+x_original = np.linspace(0, 3, num=1000)
+y_original = given_function(x_original)
+plt.plot(x_original, y_original)
