@@ -4,7 +4,7 @@ def char_lagrange(z, x):
     z_length = len(z)
     
     # Initialize the matrix to store the evaluated Lagrange characteristic polynomials
-    matrix = [[0 for _ in range(z_length)] for _ in range(x_length)]
+    evaluated_characteristic_polynomial = [[0 for _ in range(z_length)] for _ in range(x_length)]
     
     # Evaluate the Lagrange characteristic polynomial at x_k with z_i
     for k in range(x_length):
@@ -13,8 +13,8 @@ def char_lagrange(z, x):
             for m in range(x_length):
                 if m != k:
                     result = result * (z[i] - x[m]) / (x[k] - x[m])
-            matrix[k][i] = result
-    return matrix
+            evaluated_characteristic_polynomial[k][i] = result
+    return evaluated_characteristic_polynomial
 
 
 # Initialize x-interpolation values
