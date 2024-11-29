@@ -42,4 +42,11 @@ def lagrange(z, x, y):
     # Initialize the vector that will store the evaluated Lagrange interpolation formula
     evaluated_lagrange_interpolation_formula = [0 for _ in range(z_length)]
     
+    # Evaluate the Lagrange interpolation formula at z
+    for i in range(z_length):
+        result = 0
+        for k in range(y_length):
+            result = result + (y[k] * evaluated_characteristic_polynomial[k][i])
+        evaluated_lagrange_interpolation_formula[i] = result
+    
     return evaluated_lagrange_interpolation_formula
