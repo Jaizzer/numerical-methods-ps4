@@ -40,5 +40,5 @@ def lagrange(z, x, y):
 
 
 # Given function to interpolate
-def givenFunction(x):
+def given_function(x):
     return 1 / (x**4 - 3*x**2 + 4)
