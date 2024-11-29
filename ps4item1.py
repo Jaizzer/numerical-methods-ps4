@@ -37,4 +37,7 @@ def lagrange(z, x, y):
     # Determine the length of z = [z_0,..., z_m]
     z_length = len(z)
     
-    return[]
+    # Initialize the vector that will store the evaluated Lagrange interpolation formula
+    vector = [0 for _ in range(z_length)]
+    
+    return vector
