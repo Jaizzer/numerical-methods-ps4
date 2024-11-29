@@ -60,3 +60,16 @@ def get_equidistant_nodes(left_endpoint, right_endpoint, number_of_nodes):
             equidistant_nodes[i] = equidistant_nodes[i - 1] + step_size
     
     return equidistant_nodes
+
+def get_y_values(x_values, function):
+    # Determine the length of x_values
+    x_length = len(x_values)
+    
+    # Initialize the array that will store the y-values
+    y_values = [0 for _ in range(x_length)]
+    
+    # Evaluate the function using the given x_values
+    for i in range(x_length):
+        y_values[i] = function(x_values[i])
+        
+    return y_values
