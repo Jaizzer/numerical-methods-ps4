@@ -31,4 +31,7 @@ def lagrange(z, x, y):
     # Obtain the evaluated Lagrange chracteristic polynomial at points z = [z_0,...,z_m]
     evaluated_characteristic_polynomial = char_lagrange(z, x)
     
+    # Determine the length of y = [y_0,..., y_n]
+    y_length = len(y)
+    
     return[]
