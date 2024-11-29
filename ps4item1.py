@@ -34,4 +34,7 @@ def lagrange(z, x, y):
     # Determine the length of y = [y_0,..., y_n]
     y_length = len(y)
     
+    # Determine the length of z = [z_0,..., z_m]
+    z_length = len(z)
+    
     return[]
