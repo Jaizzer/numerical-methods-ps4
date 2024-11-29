@@ -1,4 +1,7 @@
 def char_lagrange(z, x):
+    # Determine the length of the inputs
+    x_length = len(x)
+    z_length = len(z)
 
     return []
 
