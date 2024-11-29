@@ -42,3 +42,21 @@ def lagrange(z, x, y):
 # Given function to interpolate
 def given_function(x):
     return 1 / (x**4 - 3*x**2 + 4)
+
+
+def get_equidistant_nodes(left_endpoint, right_endpoint, number_of_nodes):
+    # Determine the interval size
+    interval_size = right_endpoint - left_endpoint
+    
+    # Determine the step size
+    step_size = interval_size / (number_of_nodes - 1)
+    
+    # Initialize the array that will store all the equidistant nodes
+    equidistant_nodes = [0 for _ in range(number_of_nodes)]
+    for i in range(number_of_nodes):
+        if i == 0:
+            equidistant_nodes[i] = left_endpoint
+        else:
+            equidistant_nodes[i] = equidistant_nodes[i - 1] + step_size
+    
+    return equidistant_nodes
