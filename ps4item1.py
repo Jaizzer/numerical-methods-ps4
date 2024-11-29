@@ -37,3 +37,8 @@ def lagrange(z, x, y):
         evaluated_lagrange_interpolation_formula[i] = result
     
     return evaluated_lagrange_interpolation_formula
+
+
+# Given function to interpolate
+def givenFunction(x):
+    return 1 / (x**4 - 3*x**2 + 4)
