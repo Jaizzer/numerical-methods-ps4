@@ -1,4 +1,5 @@
 import numpy as np
+np.set_printoptions(legacy='1.25')
 
 def NormalNCWeights(n):    
     # Generate the equidistant nodes at the interval [-1, 1]
