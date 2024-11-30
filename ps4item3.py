@@ -1,9 +1,6 @@
 import numpy as np
 
-def NormalNCWeights(n):
-    # Initialize the matrix to store the 'n + 1' normalized weights
-    normalized_weights = [0 for _ in range(n + 1)]
-    
+def NormalNCWeights(n):    
     # Generate the equidistant nodes at the interval [-1, 1]
     x = np.linspace(-1, 1, num = n + 1)
     
@@ -17,4 +14,7 @@ def NormalNCWeights(n):
     for i in range(n + 1):
         y[i] = ((1)**(i + 1))/(i + 1) - ((-1)**(i + 1))/(i + 1)
         
+    # Solve for the weights
+    normalized_weights = np.linalg.solve(V, y)
+            
     return normalized_weights
