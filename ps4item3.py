@@ -21,7 +21,10 @@ def NormalNCWeights(n):
     # Evaluate the integral of polynomial p_n(x) on [left_endpoint, right_endpoint]
     for i in range(n + 1):
         y[i] = ((right_endpoint)**(i + 1) - (left_endpoint)**(i + 1)) /(i + 1) 
-        
+    
+    # Calculate the normalization factor
+    normalization_factor = n / (right_endpoint - left_endpoint)
+    
     # Solve for the weights
     normalized_weights = (np.linalg.solve(V_transposed, y))
 
