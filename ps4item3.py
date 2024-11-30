@@ -149,3 +149,16 @@ def NCQuad(f, a, b, w):
         newton_cotes_quadrature += weights[k] * f(a + h*k)
         
     return newton_cotes_quadrature
+
+
+def CompositeNCQuad(f, a, b, n, m):
+    # Initialize the variable to store the Newton-Cotes-Quadrature
+    newton_cotes_quadrature = 0
+    
+    # Calculate the number of subintervals
+    for i in range(m):
+        left_endpoint_of_current_subinterval = a + (b / m) * i 
+        right_endpoint_of_current_subinterval = left_endpoint_of_current_subinterval + (b / m)
+        newton_cotes_quadrature += NCQuad(f, left_endpoint_of_current_subinterval, right_endpoint_of_current_subinterval, NormalNCWeights(n))
+        
+    return newton_cotes_quadrature
