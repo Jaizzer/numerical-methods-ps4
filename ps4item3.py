@@ -2,8 +2,12 @@ import numpy as np
 np.set_printoptions(legacy='1.25')
 
 def NormalNCWeights(n):    
-    # Generate the equidistant nodes at the interval [-1, 1]
-    x = np.linspace(-1, 1, num = n + 1)
+    # Initialize an arbitraty interval
+    left_endpoint = -1
+    right_endpoint = 1
+    
+    # Generate the equidistant nodes at the interval [left_endpoint, right_endpoint]
+    x = np.linspace(left_endpoint, right_endpoint, num = n + 1)
         
     # Generate the Vandermonde matrix using the nodes
     V_transposed = [[0 for _ in range(n + 1)] for _ in range(n + 1)]
@@ -11,14 +15,14 @@ def NormalNCWeights(n):
         for j in range(n + 1):
             V_transposed[i][j] = (x[j])**(i)
     
-    # Initialize the matrix to store the evaluated integral of polynomial p_n(x) on [-1, 1]
+    # Initialize the matrix to store the evaluated integral of polynomial p_n(x) on [left_endpoint, right_endpoint]
     y = [0 for _ in range(n + 1)]
     
-    # Evaluate the integral of polynomial p_n(x) on [-1, 1]
+    # Evaluate the integral of polynomial p_n(x) on [left_endpoint, right_endpoint]
     for i in range(n + 1):
-        y[i] = ((1)**(i + 1) - (-1)**(i + 1)) /(i + 1) 
+        y[i] = ((right_endpoint)**(i + 1) - (left_endpoint)**(i + 1)) /(i + 1) 
         
     # Solve for the weights
-    normalized_weights = np.linalg.solve(V_transposed, y)
-            
+    normalized_weights = (np.linalg.solve(V_transposed, y))
+
     return normalized_weights
