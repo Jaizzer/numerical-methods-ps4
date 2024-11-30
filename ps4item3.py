@@ -124,3 +124,8 @@ def get_lower_and_upper_triangular_matrices(array):
             U[i][j] = A[i][j]
         
     return [L, U]
+
+
+# Given function to integrate
+def given_function(x):
+    return 1 / (x**4 - 3*x**2 + 4)
