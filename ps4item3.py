@@ -26,9 +26,101 @@ def NormalNCWeights(n):
     normalization_factor = n / (right_endpoint - left_endpoint)
     
     # Solve for the unnormalized weights
-    unnormalized_weights = (np.linalg.solve(V_transposed, y)) 
+    unnormalized_weights = LU_solve(V_transposed, y)
     
     # Normalized the weights
     normalized_weights = unnormalized_weights * normalization_factor
 
     return normalized_weights
+
+
+def LU_solve(A, r):
+    # Note:
+    # Ax = r where A = LU
+    # <=> LUx = r where Ux = y
+    # <=> Ly = r
+    
+    # Decompose A matrix into lower and upper triangular form: A = LU using SAXPY method
+    L, U = perform_SAXPY_factorization(A)
+        
+    # Solve for y in Ly = r
+    y = perform_forward_substitution(L, r)
+    
+    # Solve for x in Ux = y
+    x = perform_backward_substitution(U, y)
+    
+    return x
+    
+
+def perform_backward_substitution(U, y): 
+    # Determine the matrix size of the upper triangular matrix
+    matrix_size = len(U)
+    
+    # Initialize the x-matrix
+    x = np.array([0 for i in range(matrix_size)], dtype=np.float64)
+    
+    # Perform backward substitution
+    for row in range(matrix_size):
+        summation = 0
+        for col in range(matrix_size - row, matrix_size):
+            summation += U[matrix_size - (row + 1)][col] * x[col]
+        x[matrix_size - (row + 1)] = (y[matrix_size - (row + 1)] - summation) / U[matrix_size - (row + 1)][matrix_size - (row + 1)]
+    
+    return x
+    
+    
+def perform_forward_substitution(L, r):
+    # Determine the matrix size of the lower triangular matrix
+    matrix_size = len(L)
+    
+    # Initialize the y matrix
+    y = np.array([0 for i in range(matrix_size)], dtype=np.float64)
+    
+    # Perform forward substitution
+    for i in range(matrix_size):
+        y[i] = r[i]
+        for j in range(i):
+            y[i] -= L[i][j] * y[j]
+    
+    return y
+            
+
+def perform_SAXPY_factorization(array):
+    # Determine the size of the array
+    matrix_size = len(array)
+    
+    # Copy the matrix
+    A = np.array(array, dtype=np.float64)
+    
+    # Store factorized lower and upper triangular inside A
+    for k in range(matrix_size):
+        for j in range(k + 1, matrix_size):
+            A[j][k] = A[j][k] / A[k][k]
+        for j in range(k + 1, matrix_size):          
+            for i in range (k + 1, matrix_size):
+                A[i][j] = A[i][j] - A[i][k] * A[k][j]
+    
+    # Extract lower and upper triangular from A
+    return get_lower_and_upper_triangular_matrices(A)
+
+
+def get_lower_and_upper_triangular_matrices(array):
+    # Determine the size of the array
+    matrix_size = len(array)
+    
+    # Copy the matrix
+    A = np.array(array, dtype=np.float64)
+    
+    # Initialize lower and upper triangular matrices
+    L = np.zeros((matrix_size, matrix_size), dtype=np.float64)
+    U = np.zeros((matrix_size, matrix_size), dtype=np.float64)
+    
+    # Separate lower and upper triangular from A
+    for i in range(matrix_size):
+        L[i][i] = 1.0
+        for j in range(i):
+            L[i][j] = A[i][j]
+        for j in range(i, matrix_size):
+            U[i][j] = A[i][j]
+        
+    return [L, U]
