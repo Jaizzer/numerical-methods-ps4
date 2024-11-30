@@ -139,7 +139,7 @@ def NCQuad(f, a, b, w):
     h = (b - a) / n
     
     # Obtain the actual weights from the normalized weights
-    actual_weights = w * h
+    weights = w * h
     
     # Initialize the variable to store the Newton-Cotes-Quadrature
     newton_cotes_quadrature = 0
