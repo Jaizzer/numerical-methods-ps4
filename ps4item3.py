@@ -144,4 +144,8 @@ def NCQuad(f, a, b, w):
     # Initialize the variable to store the Newton-Cotes-Quadrature
     newton_cotes_quadrature = 0
     
-    return 
+    # Calculate the the Newton-Cotes quadrature of f over the interval [a, b]
+    for k in range(n):
+        newton_cotes_quadrature += weights[k] * f(a + h*k)
+        
+    return newton_cotes_quadrature
