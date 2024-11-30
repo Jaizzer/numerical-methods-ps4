@@ -16,7 +16,7 @@ def NormalNCWeights(n):
     
     # Evaluate the integral of polynomial p_n(x) on [-1, 1]
     for i in range(n + 1):
-        y[i] = ((1)**(i + 1))/(i + 1) - ((-1)**(i + 1))/(i + 1)
+        y[i] = ((1)**(i + 1) - (-1)**(i + 1)) /(i + 1) 
         
     # Solve for the weights
     normalized_weights = np.linalg.solve(V_transposed, y)
