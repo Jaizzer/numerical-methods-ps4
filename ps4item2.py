@@ -17,5 +17,7 @@ def lagrange2D(zx, zy, x, y, w):
     # Initialize the matrix to store the evaluated Lagrange characteristic polynomials on the y-axis
     evaluated_characteristic_polynomial_y = [[0 for _ in range(zy_length)] for _ in range(y_length)]
     
+    # Initialize the vector that will store the evaluated 2D Lagrange interpolation formula
+    evaluated_lagrange_interpolation_formula_2D = [[0 for _ in range(zy_length)] for _ in range(zx_length)]    
 
     return 
