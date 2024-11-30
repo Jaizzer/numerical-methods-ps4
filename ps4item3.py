@@ -25,7 +25,10 @@ def NormalNCWeights(n):
     # Calculate the normalization factor
     normalization_factor = n / (right_endpoint - left_endpoint)
     
-    # Solve for the weights
-    normalized_weights = (np.linalg.solve(V_transposed, y))
+    # Solve for the unnormalized weights
+    unnormalized_weights = (np.linalg.solve(V_transposed, y)) 
+    
+    # Normalized the weights
+    normalized_weights = unnormalized_weights * normalization_factor
 
     return normalized_weights
