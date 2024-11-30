@@ -126,11 +126,6 @@ def get_lower_and_upper_triangular_matrices(array):
     return [L, U]
 
 
-# Given function to integrate
-def given_function(x):
-    return 1 / (x**4 - 3*x**2 + 4)
-
-
 def NCQuad(f, a, b, w):
     # Calculate the degree of precision by summing the normalized weights
     n = int(np.floor(np.sum(w)))
@@ -162,3 +157,21 @@ def CompositeNCQuad(f, a, b, n, m):
         newton_cotes_quadrature += NCQuad(f, left_endpoint_of_current_subinterval, right_endpoint_of_current_subinterval, NormalNCWeights(n))
         
     return newton_cotes_quadrature
+
+
+# Given function to integrate
+def given_function(x):
+    return 1 / (x**4 - 3*x**2 + 4)
+
+'''
+Use CompositeNCQuad to approximate the given function at interval [0, 3] with [n, m] given by:
+'''
+
+# (i) [3,100], 
+print(CompositeNCQuad(given_function, 0, 3, 3, 100))
+
+# (ii) [4, 50], and 
+print(CompositeNCQuad(given_function, 0, 3, 4, 50))
+
+# (iii) [5,25]
+print(CompositeNCQuad(given_function, 0, 3, 5, 35))
