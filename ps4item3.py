@@ -10,4 +10,7 @@ def NormalNCWeights(n):
     # Generate the Vandermonde matrix using the nodes
     V = np.vander(x)
         
+    # Initialize the matrix to store the evaluated integral of polynomial p_n(x) on [-1, 1]
+    y = [0 for _ in range(n + 1)]
+    
     return normalized_weights
