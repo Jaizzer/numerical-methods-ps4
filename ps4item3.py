@@ -13,4 +13,8 @@ def NormalNCWeights(n):
     # Initialize the matrix to store the evaluated integral of polynomial p_n(x) on [-1, 1]
     y = [0 for _ in range(n + 1)]
     
+    # Evaluate the integral of polynomial p_n(x) on [-1, 1]
+    for i in range(n + 1):
+        y[i] = ((1)**(i + 1))/(i + 1) - ((-1)**(i + 1))/(i + 1)
+        
     return normalized_weights
