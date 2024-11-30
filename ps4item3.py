@@ -138,6 +138,9 @@ def NCQuad(f, a, b, w):
     # Calculate the step-size 'h'
     h = (b - a) / n
     
+    # Obtain the actual weights from the normalized weights
+    actual_weights = w * h
+    
     # Initialize the variable to store the Newton-Cotes-Quadrature
     newton_cotes_quadrature = 0
     
