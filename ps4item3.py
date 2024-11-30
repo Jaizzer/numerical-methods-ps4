@@ -133,7 +133,7 @@ def given_function(x):
 
 def NCQuad(f, a, b, w):
     # Calculate the degree of precision by summing the normalized weights
-    n = np.floor(np.sum(w))    
+    n = int(np.floor(np.sum(w)))
     
     # Calculate the step-size 'h'
     h = (b - a) / n
