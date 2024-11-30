@@ -129,3 +129,8 @@ def get_lower_and_upper_triangular_matrices(array):
 # Given function to integrate
 def given_function(x):
     return 1 / (x**4 - 3*x**2 + 4)
+
+
+def NCQuad(f, a, b, w):
+    
+    return 
