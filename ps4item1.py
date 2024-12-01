@@ -47,31 +47,79 @@ def given_function(x):
     return 1 / (x**4 - 3*x**2 + 4)
 
 
-# Initialize the plot
-plt.figure(num=1, dpi=120)
+"""
+Plot the original function and Lagrange Interpolation for each set of nodes
+"""
 
-# Plot the original function
-x_original = np.linspace(0, 3, num=1000)
-y_original = given_function(x_original)
-plt.plot(x_original, y_original, label='f(x)')
-plt.legend(loc="upper right")
-
-# Plot the lagrange interpolation function (nodes = 5)
+# Nodes = 5
 x_lagrange_0 = np.linspace(0, 3, num=5)
 y_lagrange_0 = given_function(x_lagrange_0)
-z_0 = np.linspace(0, 3,num=100)
-plt.plot(z_0, lagrange(z_0, x_lagrange_0, y_lagrange_0), label=r"P$_{4}$x")
+z_0 = np.linspace(0, 3, num=100)
 
-# Plot the lagrange interpolation function (nodes = 9)
+# Create the first figure for P4 with the original function
+plt.figure(figsize=(8, 6))
+plt.plot(np.linspace(0, 3, 1000), given_function(np.linspace(0, 3, 1000)), label='f(x)', color='purple')
+plt.plot(z_0, lagrange(z_0, x_lagrange_0, y_lagrange_0), label=r"P$_{4}$x", linestyle='--', color='#e54988')
+plt.scatter(x_lagrange_0, y_lagrange_0, color='green', alpha=1, label='Nodes')  
+plt.legend(loc="upper right")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Lagrange Interpolation P$_{4}$x with Original Function")
+plt.show()
+
+# Nodes = 9
 x_lagrange_1 = np.linspace(0, 3, num=9)
 y_lagrange_1 = given_function(x_lagrange_1)
-z_1 = np.linspace(0, 3,num=100)
-plt.plot(z_1, lagrange(z_1, x_lagrange_1, y_lagrange_1), label=r"P$_{8}$x")
+z_1 = np.linspace(0, 3, num=100)
 
-# Plot the lagrange interpolation function (nodes = 14)
+# Create the second figure for P8 with the original function
+plt.figure(figsize=(8, 6))
+plt.plot(np.linspace(0, 3, 1000), given_function(np.linspace(0, 3, 1000)), label='f(x)', color='purple')
+plt.plot(z_1, lagrange(z_1, x_lagrange_1, y_lagrange_1), label=r"P$_{8}$x", linestyle='--', color='#fec97b')  
+plt.scatter(x_lagrange_1, y_lagrange_1, color='green', alpha=1, label='Nodes')  
+plt.legend(loc="upper right")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Lagrange Interpolation P$_{8}$x with Original Function")
+plt.show()
+
+# Nodes = 14
 x_lagrange_2 = np.linspace(0, 3, num=14)
 y_lagrange_2 = given_function(x_lagrange_2)
-z_2 = np.linspace(0, 3,num=100)
-plt.plot(z_2, lagrange(z_2, x_lagrange_2, y_lagrange_2), label=r"P$_{13}$x")
+z_2 = np.linspace(0, 3, num=100)
 
+# Create the third figure for P13 with the original function
+plt.figure(figsize=(8, 6))
+plt.plot(np.linspace(0, 3, 1000), given_function(np.linspace(0, 3, 1000)), label='f(x)', color='purple')
+plt.plot(z_2, lagrange(z_2, x_lagrange_2, y_lagrange_2), label=r"P$_{13}$x", linestyle='--', color='#67bfaf')  
+plt.scatter(x_lagrange_2, y_lagrange_2, color='green', alpha=1, label='Nodes')  
+plt.legend(loc="upper right")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Lagrange Interpolation P$_{13}$x with Original Function")
+plt.show()
+
+
+# Create the combined plot with all three Lagrange functions and the original function
+plt.figure(figsize=(8, 6))
+plt.plot(np.linspace(0, 3, 1000), given_function(np.linspace(0, 3, 1000)), label='f(x)', color='purple')
+
+# Plot all Lagrange functions
+plt.plot(z_0, lagrange(z_0, x_lagrange_0, y_lagrange_0), label=r"P$_{4}$x", linestyle='--', color='#e54988')
+plt.plot(z_1, lagrange(z_1, x_lagrange_1, y_lagrange_1), label=r"P$_{8}$x", linestyle='--', color='#fec97b')  
+plt.plot(z_2, lagrange(z_2, x_lagrange_2, y_lagrange_2), label=r"P$_{13}$x", linestyle='--', color='#67bfaf')  
+
+# Scatter plot for nodes (in green)
+plt.scatter(x_lagrange_0, y_lagrange_0, color='green', alpha=1)  
+plt.scatter(x_lagrange_1, y_lagrange_1, color='green', alpha=1)  
+plt.scatter(x_lagrange_2, y_lagrange_2, color='green', alpha=1)  
+
+# Add a dummy plot for the 'nodes' label
+plt.scatter([], [], color='green', label='Nodes')
+
+# Show combined plot
+plt.legend(loc="upper right")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("All the Lagrange Interpolation with Original Function and Nodes")
 plt.show()
