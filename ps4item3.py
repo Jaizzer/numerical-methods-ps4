@@ -180,4 +180,4 @@ print(CompositeNCQuad(given_function, 0, 3, 3, 100))
 print(CompositeNCQuad(given_function, 0, 3, 4, 50))
 
 # (iii) [5,25]
-print(CompositeNCQuad(given_function, 0, 3, 5, 35))
+print(CompositeNCQuad(given_function, 0, 3, 5, 25))
