@@ -91,10 +91,7 @@ pip install numpy matplotlib scipy
 │
 └── README.md                # This documentation file
    
-# Example Output
-
-# Example Output
-
+   
 # Example Output
 - **1D Interpolation Plot:** A graph showing the interpolation of \( f(x) = \frac{1}{x^4 - 3x^2 + 4} \) using 5, 9, and 14 equidistant points.
 - **2D Interpolation Plot:** A plot of the interpolated function values on a 100×100 dense grid.
