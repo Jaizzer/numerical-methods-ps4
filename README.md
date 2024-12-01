@@ -77,7 +77,7 @@ pip install numpy matplotlib scipy
 3. **Newton-Cotes Quadrature:**
    - The `ps4item3.py` file contains the implementation of the Newton-Cotes quadrature.
    - It calculates and approximates integrals using different degrees of precision and sub-intervals.
-
+```
 
 /repo-root
 │
