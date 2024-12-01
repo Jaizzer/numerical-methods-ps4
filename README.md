@@ -98,19 +98,19 @@ pip install numpy matplotlib scipy
 - **1D Interpolation Plot:** A series of graphs showing the interpolation of \( f(x) = \frac{1}{x^4 - 3x^2 + 4} \) using 5, 9, and 14 equidistant points, along with the original function. Below are the generated plots:
 
   - **Lagrange Interpolation (5 Nodes):**  
-    ![Lagrange Interpolation (5 Nodes)](lagrange_interpolation_Figure_1.png)
+    ![Lagrange Interpolation (5 Nodes)](images/lagrange_interpolation_Figure_1.png)
   
   - **Lagrange Interpolation (9 Nodes):**  
-    ![Lagrange Interpolation (9 Nodes)](lagrange_interpolation_Figure_2.png)
+    ![Lagrange Interpolation (9 Nodes)](images/lagrange_interpolation_Figure_2.png)
   
   - **Lagrange Interpolation (14 Nodes):**  
-    ![Lagrange Interpolation (14 Nodes)](lagrange_interpolation_Figure_3.png)
+    ![Lagrange Interpolation (14 Nodes)](images/lagrange_interpolation_Figure_3.png)
   
   - **Combined Lagrange Interpolation (All Nodes):**  
-    ![Combined Lagrange Interpolation](lagrange_interpolation_Figure_4.png)
+    ![Combined Lagrange Interpolation](images/lagrange_interpolation_Figure_4.png)
 
 - **2D Interpolation Plot:** A plot of the interpolated function values on a 100×100 dense grid.
   
-  [2D Interpolation Plot](./3D_scatter_plot_and_color_map_of_100_by_100_grid_points.png)
+  [2D Interpolation Plot](images/3D_scatter_plot_and_color_map_of_100_by_100_grid_points.png)
 
 - **Newton-Cotes Quadrature Results:** A numerical approximation of the integral using different degrees of precision and sub-intervals.
