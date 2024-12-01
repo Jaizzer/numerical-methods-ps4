@@ -51,12 +51,15 @@ def given_function(x):
 Plot the original function and Lagrange Interpolation for each set of nodes
 """
 
+
+"""
+Create the first figure for P4 with the original function
+"""
 # Nodes = 5
 x_lagrange_0 = np.linspace(0, 3, num=5)
 y_lagrange_0 = given_function(x_lagrange_0)
 z_0 = np.linspace(0, 3, num=100)
 
-# Create the first figure for P4 with the original function
 plt.figure(figsize=(8, 6))
 plt.plot(np.linspace(0, 3, 1000), given_function(np.linspace(0, 3, 1000)), label='f(x)', color='purple')
 plt.plot(z_0, lagrange(z_0, x_lagrange_0, y_lagrange_0), label=r"P$_{4}$x", linestyle='--', color='#e54988')
@@ -67,12 +70,15 @@ plt.ylabel("y")
 plt.title("Lagrange Interpolation P$_{4}$x with 5 equidistant nodes on [0, 3]")
 plt.show()
 
+
+"""
+Create the second figure for P8 with the original function
+"""
 # Nodes = 9
 x_lagrange_1 = np.linspace(0, 3, num=9)
 y_lagrange_1 = given_function(x_lagrange_1)
 z_1 = np.linspace(0, 3, num=100)
 
-# Create the second figure for P8 with the original function
 plt.figure(figsize=(8, 6))
 plt.plot(np.linspace(0, 3, 1000), given_function(np.linspace(0, 3, 1000)), label='f(x)', color='purple')
 plt.plot(z_1, lagrange(z_1, x_lagrange_1, y_lagrange_1), label=r"P$_{8}$x", linestyle='--', color='#fec97b')  
@@ -83,12 +89,15 @@ plt.ylabel("y")
 plt.title("Lagrange Interpolation P$_{8}$x with 9 equidistant nodes on [0, 3]")
 plt.show()
 
+
+"""
+Create the first figure for P13 with the original function
+"""
 # Nodes = 14
 x_lagrange_2 = np.linspace(0, 3, num=14)
 y_lagrange_2 = given_function(x_lagrange_2)
 z_2 = np.linspace(0, 3, num=100)
 
-# Create the third figure for P13 with the original function
 plt.figure(figsize=(8, 6))
 plt.plot(np.linspace(0, 3, 1000), given_function(np.linspace(0, 3, 1000)), label='f(x)', color='purple')
 plt.plot(z_2, lagrange(z_2, x_lagrange_2, y_lagrange_2), label=r"P$_{13}$x", linestyle='--', color='#67bfaf')  
@@ -100,7 +109,9 @@ plt.title("Lagrange Interpolation P$_{13}$x with 14 equidistant nodes on [0, 3]"
 plt.show()
 
 
-# Create the combined plot with all three Lagrange functions and the original function
+"""
+Create the combined plot with all three Lagrange functions and the original function
+"""
 plt.figure(figsize=(8, 6))
 plt.plot(np.linspace(0, 3, 1000), given_function(np.linspace(0, 3, 1000)), label='f(x)', color='purple')
 
