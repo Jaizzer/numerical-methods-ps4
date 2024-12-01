@@ -3,19 +3,19 @@ import matplotlib.pyplot as plt
 
 def char_lagrange(z, x):
     # Determine the length of the inputs
-    x_length = len(x)
-    z_length = len(z)
+    n = len(x)
+    m = len(z)
     
     # Initialize the matrix to store the evaluated Lagrange characteristic polynomials
-    evaluated_characteristic_polynomial = [[0 for _ in range(z_length)] for _ in range(x_length)]
+    evaluated_characteristic_polynomial = [[0 for _ in range(m)] for _ in range(n)]
     
     # Evaluate the Lagrange characteristic polynomial at x_k with z_i
-    for k in range(x_length):
-        for i in range(z_length):
+    for k in range(n):
+        for i in range(m):
             result = 1
-            for m in range(x_length):
-                if m != k:
-                    result = result * (z[i] - x[m]) / (x[k] - x[m])
+            for t in range(n):
+                if t != k:
+                    result = result * (z[i] - x[t]) / (x[k] - x[t])
             evaluated_characteristic_polynomial[k][i] = result
     return evaluated_characteristic_polynomial
 
@@ -27,13 +27,13 @@ def lagrange(z, x, y):
     y_length = len(y)
     
     # Determine the length of z = [z_0,..., z_m]
-    z_length = len(z)
+    m = len(z)
     
     # Initialize the vector that will store the evaluated Lagrange interpolation formula
-    evaluated_lagrange_interpolation_formula = [0 for _ in range(z_length)]
+    evaluated_lagrange_interpolation_formula = [0 for _ in range(m)]
     
     # Evaluate the Lagrange interpolation formula at z
-    for i in range(z_length):
+    for i in range(m):
         result = 0
         for k in range(y_length):
             result = result + (y[k] * evaluated_characteristic_polynomial[k][i])
