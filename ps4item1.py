@@ -91,7 +91,7 @@ plt.show()
 
 
 """
-Create the first figure for P13 with the original function
+Create the third figure for P13 with the original function
 """
 # Nodes = 14
 x_lagrange_2 = np.linspace(0, 3, num=14)
