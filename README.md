@@ -97,6 +97,6 @@ pip install numpy matplotlib scipy
 - **1D Interpolation Plot:** A graph showing the interpolation of \( f(x) = \frac{1}{x^4 - 3x^2 + 4} \) using 5, 9, and 14 equidistant points.
 - **2D Interpolation Plot:** A plot of the interpolated function values on a 100×100 dense grid.
   
-  [2D Interpolation Plot](./lagrange-2D-sample-output.png)
+  [2D Interpolation Plot](./3D_scatter_plot_and_color_map_of_100_by_100_grid_points.png)
 
 - **Newton-Cotes Quadrature Results:** A numerical approximation of the integral using different degrees of precision and sub-intervals.
