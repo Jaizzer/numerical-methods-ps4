@@ -46,6 +46,9 @@ def lagrange2D(zx, zy, x, y, w):
     # Evaluate the Lagrange characteristic polynomials on the y-axis
     evaluated_characteristic_polynomial_y = char_lagrange(zy, y)
     
+    # Initialize the array to store the summed basis Lagrange polynomial at zy_k
+    summed_basis_at_zy_k = [0 for _ in range(zy_length)]    
+    
     # Initialize the vector that will store the evaluated 2D Lagrange interpolation formula
     evaluated_lagrange_interpolation_formula_2D = [[0 for _ in range(zy_length)] for _ in range(zx_length)]    
 
