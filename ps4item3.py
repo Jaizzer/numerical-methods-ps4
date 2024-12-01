@@ -146,7 +146,7 @@ def NCQuad(f, a, b, w):
     integral = 0
     
     # Calculate the the integral quadrature of f over the interval [a, b]
-    for k in range(n):
+    for k in range(node_count):
         integral += weights[k] * f(a + h*k)
         
     return integral
