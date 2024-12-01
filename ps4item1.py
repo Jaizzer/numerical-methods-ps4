@@ -47,10 +47,10 @@ def given_function(x):
     return 1 / (x**4 - 3*x**2 + 4)
 
 
+
 """
 Plot the original function and Lagrange Interpolation for each set of nodes
 """
-
 
 """
 Create the first figure for P4 with the original function
