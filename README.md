@@ -63,6 +63,7 @@ You can install the required libraries using:
 
 ```bash
 pip install numpy matplotlib scipy
+```
 
 # Running the Code
 
@@ -77,7 +78,7 @@ pip install numpy matplotlib scipy
 3. **Newton-Cotes Quadrature:**
    - The `ps4item3.py` file contains the implementation of the Newton-Cotes quadrature.
    - It calculates and approximates integrals using different degrees of precision and sub-intervals.
-```
+
 
 /repo-root
 │
@@ -91,7 +92,7 @@ pip install numpy matplotlib scipy
 │
 └── README.md                # This documentation file
    
-   
+
 # Example Output
 - **1D Interpolation Plot:** A graph showing the interpolation of \( f(x) = \frac{1}{x^4 - 3x^2 + 4} \) using 5, 9, and 14 equidistant points.
 - **2D Interpolation Plot:** A plot of the interpolated function values on a 100×100 dense grid.
