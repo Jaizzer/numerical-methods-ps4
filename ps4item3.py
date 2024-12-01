@@ -33,6 +33,10 @@ def NormalNCWeights(n):
     return normalized_weights
 
 
+"""
+    LU_solve function and other related dependencies came from our Problem Set 3 code submission
+"""
+
 def LU_solve(A, r):
     # Note:
     # Ax = r where A = LU
