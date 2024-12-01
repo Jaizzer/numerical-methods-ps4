@@ -130,8 +130,11 @@ def get_lower_and_upper_triangular_matrices(array):
 
 
 def NCQuad(f, a, b, w):
-    # Calculate the degree of precision by summing the normalized weights
-    n = len(w) - 1
+    # Calculate the number of nodes
+    node_count = len(w)
+    
+    # Calculate the degree of precision by subtracting 1 to the number of nodes
+    n = node_count - 1
     
     # Calculate the step-size 'h'
     h = (b - a) / n
