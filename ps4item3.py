@@ -166,10 +166,10 @@ def given_function(x):
 Use CompositeNCQuad to approximate the given function at interval [0, 3] with [n, m] given by:
 '''
 
-# (i) [3,100], 
+# (i) [3, 100]
 print(CompositeNCQuad(given_function, 0, 3, 3, 100))
 
-# (ii) [4, 50], and 
+# (ii) [4, 50]
 print(CompositeNCQuad(given_function, 0, 3, 4, 50))
 
 # (iii) [5,25]
