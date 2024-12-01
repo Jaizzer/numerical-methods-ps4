@@ -35,6 +35,14 @@ def lagrange2D(zx, zy, x, y, w):
     # Initialize the array to store the summed basis Lagrange polynomial at zx_k
     summed_basis_at_zx_k = [0 for _ in range(zx_length)]    
     
+    # Evaluate the summed basis Lagrange polynomial at zx_k
+    for i in range(zx_length):
+        result = 0
+        for k in range(x_length):
+            result += evaluated_characteristic_polynomial_x[k][i]
+        summed_basis_at_zx_k[i] = result
+
+    
     # Evaluate the Lagrange characteristic polynomials on the y-axis
     evaluated_characteristic_polynomial_y = char_lagrange(zy, y)
     
