@@ -1,7 +1,5 @@
 import numpy as np
 
-
-
 """
     LU_solve function and other related dependencies came from our Problem Set 3 code submission
 """
