@@ -64,7 +64,7 @@ plt.scatter(x_lagrange_0, y_lagrange_0, color='green', alpha=1, label='Nodes')
 plt.legend(loc="upper right")
 plt.xlabel("x")
 plt.ylabel("y")
-plt.title("Lagrange Interpolation P$_{4}$x with Original Function")
+plt.title("Lagrange Interpolation P$_{4}$x with 5 equidistant nodes on [0, 3]")
 plt.show()
 
 # Nodes = 9
@@ -80,7 +80,7 @@ plt.scatter(x_lagrange_1, y_lagrange_1, color='green', alpha=1, label='Nodes')
 plt.legend(loc="upper right")
 plt.xlabel("x")
 plt.ylabel("y")
-plt.title("Lagrange Interpolation P$_{8}$x with Original Function")
+plt.title("Lagrange Interpolation P$_{8}$x with 9 equidistant nodes on [0, 3]")
 plt.show()
 
 # Nodes = 14
@@ -96,7 +96,7 @@ plt.scatter(x_lagrange_2, y_lagrange_2, color='green', alpha=1, label='Nodes')
 plt.legend(loc="upper right")
 plt.xlabel("x")
 plt.ylabel("y")
-plt.title("Lagrange Interpolation P$_{13}$x with Original Function")
+plt.title("Lagrange Interpolation P$_{13}$x with 14 equidistant nodes on [0, 3]")
 plt.show()
 
 
