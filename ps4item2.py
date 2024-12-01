@@ -38,4 +38,15 @@ def lagrange2D(zx, zy, x, y, w):
     # Initialize the vector that will store the evaluated 2D Lagrange interpolation formula
     evaluated_lagrange_interpolation_formula_2D = [[0 for _ in range(zy_length)] for _ in range(zx_length)]    
 
-    return 
+    # Evaluate the 2D Lagrange interpolation formula
+    for x_index in range(zx_length):
+        for y_index in range(zy_length):
+            outer_result = 0
+            for i in range(x_length):
+                inner_result = 0
+                for j in range(y_length):
+                    inner_result += w[i][j] * evaluated_characteristic_polynomial_x[i][x_index] * evaluated_characteristic_polynomial_y[j][y_index]
+                outer_result += inner_result
+            evaluated_lagrange_interpolation_formula_2D[x_index][y_index] = outer_result
+            
+    return evaluated_lagrange_interpolation_formula_2D   
