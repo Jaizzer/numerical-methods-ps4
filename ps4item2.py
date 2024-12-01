@@ -29,11 +29,11 @@ def lagrange2D(zx, zy, x, y, w):
     # Determine the lenght of zy
     zy_length = len(zy)
     
-    # Initialize the matrix to store the evaluated Lagrange characteristic polynomials on the x-axis
-    evaluated_characteristic_polynomial_x = [[0 for _ in range(zx_length)] for _ in range(x_length)]
+    # Evaluate the Lagrange characteristic polynomials on the x-axis
+    evaluated_characteristic_polynomial_x = char_lagrange(zx, x)
     
-    # Initialize the matrix to store the evaluated Lagrange characteristic polynomials on the y-axis
-    evaluated_characteristic_polynomial_y = [[0 for _ in range(zy_length)] for _ in range(y_length)]
+    # Evaluate the Lagrange characteristic polynomials on the y-axis
+    evaluated_characteristic_polynomial_y = char_lagrange(zy, y)
     
     # Initialize the vector that will store the evaluated 2D Lagrange interpolation formula
     evaluated_lagrange_interpolation_formula_2D = [[0 for _ in range(zy_length)] for _ in range(zx_length)]    
